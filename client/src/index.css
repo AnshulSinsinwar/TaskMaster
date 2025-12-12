@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0e0e0e;
+  --card-dark: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --neon-green: #00ff9d;
+  --neon-purple: #b300ff;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+}
+
+body {
+  @apply bg-[#0e0e0e] text-white antialiased selection:bg-indigo-500 selection:text-white;
+  font-family: 'Outfit', sans-serif;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(179, 0, 255, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 255, 157, 0.05) 0%, transparent 25%);
+}
+
+.glass-card {
+  @apply backdrop-blur-xl bg-[#18181b]/60 border border-white/10 shadow-2xl;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.input-field {
+  @apply w-full bg-[#27272a] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-[#00ff9d] focus:ring-1 focus:ring-[#00ff9d] transition-all duration-300 outline-none;
+}
+
+.btn-primary {
+  @apply w-full flex justify-center py-3 px-4 rounded-xl font-bold text-black bg-gradient-to-r from-[#00ff9d] to-[#00cc7e] hover:shadow-[#00ff9d]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply w-full flex justify-center py-3 px-4 rounded-xl font-bold text-white bg-white/10 hover:bg-white/20 border border-white/5 transition-all duration-300 active:scale-95;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+/* Autofill Override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #27272a inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
